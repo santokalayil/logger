@@ -19,20 +19,20 @@ class Logger(__LoggerSuperClass):
         self._backupcount = self.config["BACKUP_COUNT"]
         self._formatter = Formatter(self._format)
         self.setLevel(self._level)
-        self.set_console_stream_handler()
-        self.set_file_stream_handler()
+        self.set_console_handler()
+        self.set_file_handler()
     
     @property 
     def config(self) -> Dict[str, Any]:
         return yaml.safe_load(Path(CONFIG_FILE).read_text())
     
-    def set_console_stream_handler(self) -> None:
+    def set_console_handler(self) -> None:
         console_handler = StreamHandler()
         console_handler.setLevel(self._level)
         console_handler.setFormatter(self._formatter)
         self.addHandler(console_handler)
     
-    def set_file_stream_handler(self) -> None:
+    def set_file_handler(self) -> None:
         # file_handler = FileHandler(self._file)
         file_handler = TimedRotatingFileHandler(self._file, when=self._when, backupCount=self._backupcount)
         file_handler.setLevel(self._level)
