@@ -1,0 +1,5 @@
+LEVEL: DEBUG
+FORMAT: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+FILE: app.log
+WHEN: midnight
+BACKUP_COUNT: 7
