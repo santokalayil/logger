@@ -15,5 +15,15 @@ For each handlers, we can have seperate log levels, log formats. But class creat
 2024-07-01 01:19:03,862 - __main__ - ERROR - This is error
 2024-07-01 01:19:03,862 - __main__ - DEBUG - This is debugging message
 ```
-
+## Logging Levels and Their Values
+```python
+CRITICAL = 50
+FATAL = CRITICAL
+ERROR = 40
+WARNING = 30
+WARN = WARNING
+INFO = 20
+DEBUG = 10
+NOTSET = 0
+```
 
